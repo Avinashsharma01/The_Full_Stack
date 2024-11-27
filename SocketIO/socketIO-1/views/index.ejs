@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Socket.io</title>
+    </head>
+    <body>
+        <h1>Hello socket.io</h1>
+
+        <input type="text" class="inputfield" id="message" />
+        <button id="send">Send</button>
+
+        <div>
+            <h2>Messages</h2>
+            <ul id="messages"></ul>
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            // function connect() {
+            //     const socket = io("http://localhost:3000");
+            //     socket.on("connect", () => {
+            //         console.log("Connected to server");
+            //     });
+            //     socket.on("message", (data) => {
+            //         console.log(data);
+            //     });
+            //     socket.on("disconnect", () => {
+            //         console.log("Disconnected from server");
+            //     });
+            // }
+
+            const socket = io();
+            const message = document.getElementById("message");
+            const send = document.getElementById("send");
+            const Allmessages = document.getElementById("messages");
+
+            socket.on("message", (message) => {
+                const li = document.createElement("li");
+                li.textContent = message;
+                Allmessages.appendChild(li);
+            });
+
+            send.addEventListener("click", () => {
+                console.log(message.value);
+                socket.emit("message", message.value);
+            });
+        </script>
+    </body>
+</html>

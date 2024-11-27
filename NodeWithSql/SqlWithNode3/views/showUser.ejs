@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Users</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- 
+    userId varchar(255) primary key,
+    username varchar(255),
+    email varchar(255),
+    avatar varchar(255),
+    password varchar(255),
+    birthdate date,
+    registeredAt date`; -->
+
+    <div class="allUsers">
+        <h1>This is the all users</h1>
+        <table border="1">
+            <tr>
+                <th>userId</th>
+                <th>username</th>
+                <th>email</th>
+                <th class="avatar">avatar</th>
+                <th>password</th>
+                <th>birthdate</th>
+            </tr>
+
+            <% data.forEach(function(user) { %>
+                <tr>
+                    <td><%= user.userId %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.email %></td>
+                    <td class="avatar1"><%= user.avatar %></td>
+                    <td><%= user.password %></td>
+                    <td><%= user.birthdate %></td>
+                </tr>
+            <% }); %>
+            
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <div>
+            <h1>Your at profile page</h1>
+            <a href="/logout" class="underline">logout</a>
+        </div>
+        <div
+            class="uploadfile w-full h-screen flex justify-center items-center"
+        >
+            <form
+                action="/upload"
+                method="post"
+                enctype="multipart/form-data"
+                class="bg-gray-500 w-1/4 h-1/4 flex flex-col justify-center items-center"
+            >
+                <input type="file" name="file" id="file" />
+                <input
+                    type="submit"
+                    value="Upload"
+                    class="bg-white text-black px-2"
+                />
+            </form>
+        </div>
+    </body>
+</html>

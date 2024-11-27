@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.allUsers{
+    width: 100vw;
+    height: 100vh;
+}
+
+tr,th,td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+table{
+    width: 850px;
+    border-collapse: collapse;
+}

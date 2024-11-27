@@ -1,0 +1,16 @@
+{
+  "name": "middleware",
+  "version": "1.0.0",
+  "description": "",
+  "main": "middleware.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon middleware.js"
+  },
+  "author": "Avinash Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}

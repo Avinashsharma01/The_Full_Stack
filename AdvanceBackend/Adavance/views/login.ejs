@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <div class="loginpage w-full h-screen flex justify-center items-center">
+            <form
+                action="/login"
+                method="post"
+                class="w-1/4 h-3/5 bg-slate-600 text-white flex jucstify-center flex-col p-8 rounded-sm"
+            >
+                <div class="header">
+                    <h1 class="text-3xl text-center mb-10 uppercase">
+                        Login form
+                    </h1>
+                </div>
+                <label htmlFor="Username">email </label>
+                <input
+                    class="text-black h-10 mb-5 px-3 outline-none rounded-md"
+                    type="text"
+                    name="email"
+                    placeholder="Username or email"
+                    id="Username"
+                />
+                <label htmlFor="Username">Password </label>
+                <input
+                    class="text-black h-10 px-3 outline-none rounded-md"
+                    type="text"
+                    name="password"
+                    placeholder="Password"
+                    id="Password"
+                />
+                <p class="mt-2">
+                    If you are new here
+                    <span class="text-green-500 underline">
+                        <a href="/register" class="mr-5">Create account</a>
+                        <a href="/home">home</a>
+                    </span>
+                </p>
+
+                <input
+                    type="submit"
+                    value="Login"
+                    class="h-10 mt-10 rounded-md text-white bg-blue-600"
+                />
+            </form>
+        </div>
+    </body>
+</html>

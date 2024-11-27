@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Avinash</h1>
+    <div class="container">
+        <% data.forEach((item) => { %>
+            <div class="card">
+                <a href="/post/create">Create</a>
+                <h1 class="id"><%= item.id %></h1>
+                <h2><%= item.name %></h2>
+                <p><%= item.age %></p>
+                <a href="/post/delete/<%=item.id%>">Delete</a>
+                
+            </div>
+        <% }) %>
+
+
+
+        <!-- <% for(d of data) { %>
+            <div class="card">
+                <h2><%= d.name %></h2>
+                <p><%= d.age %></p>
+            </div>
+        <% } %> -->
+    </div>
+</body>
+</html>
