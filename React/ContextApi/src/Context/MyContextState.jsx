@@ -17,6 +17,7 @@ export const MyContextState = (props) => {
         style: "text-white  text-4xl",
         color: "text-black",
     };
+
     const brijesh = {
         name: "soumya ",
         lastName: "Sharma",
