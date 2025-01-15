@@ -1,3 +1,43 @@
+# FullStack Redux Project
+
+This project demonstrates a full-stack application using Redux for state management.
+
+## Project Structure
+
+-   `My-Redux/`: Contains the Redux implementation and related configurations.
+    -   `index.html`: The main HTML file.
+    -   `src/`: Contains the source code for the React application.
+    -   `vite.config.js`: Configuration file for Vite.
+    -   `tailwind.config.js`: Configuration file for Tailwind CSS.
+    -   `postcss.config.js`: Configuration file for PostCSS.
+    -   `package.json`: Lists the project dependencies.
+    -   `package-lock.json`: Lock file for dependencies.
+    -   `.gitignore`: Specifies files to be ignored by Git.
+    -   `eslint.config.js`: Configuration file for ESLint.
+
+## Getting Started
+
+To get started with this project, follow these steps:
+
+1. Clone the repository.
+2. Install the dependencies using `npm install`.
+3. Start the development server using `npm run dev`.
+
+## Available Scripts
+
+-   `npm run dev`: Starts the development server.
+-   `npm run build`: Builds the project for production.
+-   `npm run lint`: Runs ESLint to check for code quality issues.
+
+## Learn More
+
+-   [Redux Documentation](https://redux.js.org/)
+-   [React Documentation](https://reactjs.org/)
+-   [Vite Documentation](https://vitejs.dev/)
+-   [Tailwind CSS Documentation](https://tailwindcss.com/)
+
+---
+
 The **Redux Toolkit (RTK)** is an official, opinionated library from the Redux team designed to simplify the process of writing Redux logic. It eliminates boilerplate code and provides utilities to implement Redux features efficiently.
 
 Here's a step-by-step guide to learning and using Redux Toolkit:
