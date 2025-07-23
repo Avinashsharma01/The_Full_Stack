@@ -33,7 +33,7 @@ const Products = () => {
     };
     return (
         <>
-            <div className="w-full h-auto p-10 grid  grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+            <div className="w-full bg-[#1E2228] text-white h-auto p-10 grid  grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
                 <h1 className="text-4xl text-center text-white ">
                     The products
                 </h1>

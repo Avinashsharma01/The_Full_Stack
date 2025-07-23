@@ -3,7 +3,7 @@ import { useContext } from "react";
 function InnerHome3() {
     const { avinash, soumya, brijesh } = useContext(MyContext);
     return (
-        <div className={`${avinash.style}`}>
+        <div className={`${avinash.style} bg-slate-700 w-[400px] p-5 `}>
             <h1>
                 {soumya.name} {avinash.lastName}
             </h1>

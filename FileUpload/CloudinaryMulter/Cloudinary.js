@@ -31,8 +31,9 @@ const storage = new CloudinaryStorage({
     },
 });
 
-//manually delete the image
 
+
+//manually delete the image
 const deleteimg = () => {
     cloudinary.uploader.destroy('uploads/1732308729971-Screenshot (244)')
 }

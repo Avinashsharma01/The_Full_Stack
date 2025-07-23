@@ -8,7 +8,7 @@ const Cart = () => {
         dispatch(remove(product));
     };
     return (
-        <div className="w-full h-auto p-10 grid  grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+        <div className="w-full bg-[#1E2228] text-white min-h-screen h-auto p-10 grid  grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
             {cartProduct.map((product) => (
                 <div
                     className="border flex justify-center items-center flex-col p-5"
