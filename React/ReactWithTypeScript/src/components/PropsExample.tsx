@@ -1,4 +1,4 @@
-import { type FC, type ReactElement, useState, useEffect } from "react";
+import { type FC, useState, useEffect } from "react";
 import CodeBlock from "./shared/CodeBlock";
 
 // Define a type for our component props
@@ -48,19 +48,20 @@ const Card: FC<CardProps> = ({ title, children }) => (
 const Counter: FC = () => {
     // Type inference works here, but we can be explicit
     const [count, setCount] = useState<number>(0);
-    const [text, setText] = useState<string>("");
-    const [isActive, setIsActive] = useState<boolean>(false);
-    const [items, setItems] = useState<string[]>([]);
+    // Other state examples (commented for demo)
+    // const [text, setText] = useState<string>("");
+    // const [isActive, setIsActive] = useState<boolean>(false);
+    // const [items, setItems] = useState<string[]>([]);
 
-    // useState with complex types
-    interface User {
-        id: number;
-        name: string;
-        email: string;
-    }
+    // useState with complex types (commented for demo)
+    // interface User {
+    //     id: number;
+    //     name: string;
+    //     email: string;
+    // }
 
-    // Explicitly providing the type for useState
-    const [user, setUser] = useState<User | null>(null);
+    // Explicitly providing the type for useState (commented for demo)
+    // const [user, setUser] = useState<User | null>(null);
 
     // Using a type with optional fields
     interface FormState {

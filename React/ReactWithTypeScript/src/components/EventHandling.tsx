@@ -20,10 +20,10 @@ const EventHandling: FC = () => {
         setInputValue(event.target.value);
     };
 
-    // 2. Handling textarea change events
-    const handleTextareaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-        setInputValue(event.target.value);
-    };
+    // 2. Handling textarea change events (commented for demo purposes)
+    // const handleTextareaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    //     setInputValue(event.target.value);
+    // };
 
     // 3. Handling select change events
     const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {

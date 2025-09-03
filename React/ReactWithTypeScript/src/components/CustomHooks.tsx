@@ -251,7 +251,7 @@ function useWindowSize(): WindowSize {
 function usePrevious<T>(value: T): T | undefined {
     // The ref object is a generic container whose current property is mutable
     // and can hold any value, similar to an instance property on a class
-    const ref = useRef<T>();
+    const ref = useRef<T | undefined>(undefined);
 
     // Store current value in ref
     useEffect(() => {
@@ -262,58 +262,58 @@ function usePrevious<T>(value: T): T | undefined {
     return ref.current;
 }
 
-// 6. Custom hook for API fetching
-interface FetchState<T> {
-    data: T | null;
-    loading: boolean;
-    error: Error | null;
-}
+// 6. Custom hook for API fetching (commented for demo purposes)
+// interface FetchState<T> {
+//     data: T | null;
+//     loading: boolean;
+//     error: Error | null;
+// }
 
-function useFetch<T>(url: string, options?: RequestInit) {
-    const [state, setState] = useState<FetchState<T>>({
-        data: null,
-        loading: true,
-        error: null,
-    });
+// function useFetch<T>(url: string, options?: RequestInit) {
+//     const [state, setState] = useState<FetchState<T>>({
+//         data: null,
+//         loading: true,
+//         error: null,
+//     });
 
-    useEffect(() => {
-        let isMounted = true;
+//     useEffect(() => {
+//         let isMounted = true;
 
-        const fetchData = async () => {
-            setState((prev) => ({ ...prev, loading: true }));
+//         const fetchData = async () => {
+//             setState((prev) => ({ ...prev, loading: true }));
 
-            try {
-                const response = await fetch(url, options);
+//             try {
+//                 const response = await fetch(url, options);
 
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
+//                 if (!response.ok) {
+//                     throw new Error(`HTTP error! status: ${response.status}`);
+//                 }
 
-                const data = await response.json();
+//                 const data = await response.json();
 
-                if (isMounted) {
-                    setState({ data, loading: false, error: null });
-                }
-            } catch (error) {
-                if (isMounted) {
-                    setState({
-                        data: null,
-                        loading: false,
-                        error: error as Error,
-                    });
-                }
-            }
-        };
+//                 if (isMounted) {
+//                     setState({ data, loading: false, error: null });
+//                 }
+//             } catch (error) {
+//                 if (isMounted) {
+//                     setState({
+//                         data: null,
+//                         loading: false,
+//                         error: error as Error,
+//                     });
+//                 }
+//             }
+//         };
 
-        fetchData();
+//         fetchData();
 
-        return () => {
-            isMounted = false;
-        };
-    }, [url, options]);
+//         return () => {
+//             isMounted = false;
+//         };
+//     }, [url, options]);
 
-    return state;
-}
+//     return state;
+// }
 
 // Demo component to showcase custom hooks
 const CustomHooks: FC = () => {

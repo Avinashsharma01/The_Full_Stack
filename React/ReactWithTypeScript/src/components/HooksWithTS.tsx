@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {
     type FC,
     useState,
@@ -17,17 +18,17 @@ const HooksWithTS: FC = () => {
     // Explicit type annotation
     const [name, setName] = useState<string>("");
 
-    // Union type for state that can be multiple types
-    const [data, setData] = useState<string | null>(null);
+    // Union type for state that can be multiple types (commented for demo)
+    // const [data, setData] = useState<string | null>(null);
 
-    // Complex object state
-    interface User {
-        id: number;
-        name: string;
-        email: string;
-    }
+    // Complex object state (commented for demo)
+    // interface User {
+    //     id: number;
+    //     name: string;
+    //     email: string;
+    // }
 
-    const [user, setUser] = useState<User | null>(null);
+    // const [user, setUser] = useState<User | null>(null);
 
     // 2. useEffect with TypeScript
     useEffect(() => {

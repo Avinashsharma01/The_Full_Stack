@@ -1,4 +1,9 @@
-import { type FC, ReactNode, ReactElement, PropsWithChildren } from "react";
+import {
+    type FC,
+    type ReactNode,
+    type ReactElement,
+    type PropsWithChildren,
+} from "react";
 import CodeBlock from "./shared/CodeBlock";
 
 // Different ways to type React Function Components
@@ -56,33 +61,35 @@ const List = ({ items, renderItem }: ListProps): ReactElement => {
 };
 
 // 6. Component with generic props
-interface SelectProps<T> {
-    items: T[];
-    selectedItem: T;
-    renderItem: (item: T) => ReactNode;
-    onChange: (item: T) => void;
-}
+// Generic component props (for demo purposes)
+// interface SelectProps<T> {
+//     items: T[];
+//     selectedItem: T;
+//     renderItem: (item: T) => ReactNode;
+//     onChange: (item: T) => void;
+// }
 
-function Select<T>({
-    items,
-    selectedItem,
-    renderItem,
-    onChange,
-}: SelectProps<T>): ReactElement {
-    return (
-        <div className="select">
-            {items.map((item, index) => (
-                <div
-                    key={index}
-                    className={item === selectedItem ? "selected" : ""}
-                    onClick={() => onChange(item)}
-                >
-                    {renderItem(item)}
-                </div>
-            ))}
-        </div>
-    );
-}
+// Generic component example (commented for demo purposes)
+// function Select<T>({
+//     items,
+//     selectedItem,
+//     renderItem,
+//     onChange,
+// }: SelectProps<T>): ReactElement {
+//     return (
+//         <div className="select">
+//             {items.map((item, index) => (
+//                 <div
+//                     key={index}
+//                     className={item === selectedItem ? "selected" : ""}
+//                     onClick={() => onChange(item)}
+//                 >
+//                     {renderItem(item)}
+//                 </div>
+//             ))}
+//         </div>
+//     );
+// }
 
 const FunctionComponents: FC = () => {
     const fruits = ["Apple", "Banana", "Cherry", "Durian"];

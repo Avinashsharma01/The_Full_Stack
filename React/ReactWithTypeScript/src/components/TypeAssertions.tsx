@@ -1,22 +1,24 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { type FC, useState, useEffect, useRef } from "react";
 import CodeBlock from "./shared/CodeBlock";
 
 const TypeAssertions: FC = () => {
     // Basic examples of type assertions
-    const userInput = "42";
+    // const userInput = "42";
 
     // Type assertion example 1: "as" syntax (preferred)
-    const numericValue1 = userInput as unknown as number;
+    // const numericValue1 = userInput as unknown as number;
 
     // Type assertion example 2: angle bracket syntax (not used in TSX files)
     // This syntax won't work in .tsx files due to conflict with JSX
     // const numericValue2 = <number>userInput;
 
     // Type assertion with objects
-    const someObject = {
-        name: "John",
-        age: 30,
-    };
+    // const someObject = {
+    //     name: "John",
+    //     age: 30,
+    // };
 
     // Asserting a more specific type
     interface User {
@@ -26,7 +28,7 @@ const TypeAssertions: FC = () => {
     }
 
     // This is a potentially unsafe assertion because 'email' is missing
-    const user = someObject as User;
+    // const user = someObject as User;
 
     // Safer approach using type assertion with conditional check
     function assertUser(obj: any): asserts obj is User {
@@ -72,28 +74,28 @@ const TypeAssertions: FC = () => {
     }, []);
 
     // Type assertion with event targets
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        // Using type assertion to access specific properties
-        const target = event.target as HTMLInputElement;
-        console.log(target.value);
-    };
+    // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //     // Using type assertion to access specific properties
+    //     const target = event.target as HTMLInputElement;
+    //     console.log(target.value);
+    // };
 
     // Type assertion with non-null assertion operator
-    const getNonNullValue = () => {
-        // TypeScript might think this could be null or undefined
-        const value: string | null = "Hello World";
+    // const getNonNullValue = () => {
+    //     // TypeScript might think this could be null or undefined
+    //     const value: string | null = "Hello World";
 
-        // Non-null assertion operator (!) tells TypeScript that value is not null/undefined
-        const definitelyString: string = value!;
+    //     // Non-null assertion operator (!) tells TypeScript that value is not null/undefined
+    //     const definitelyString: string = value!;
 
-        return definitelyString;
-    };
+    //     return definitelyString;
+    // };
 
     // Const assertions
     // Without const assertion
-    const colors = ["red", "green", "blue"] as string[];
-    // With const assertion (makes tuple with literal types)
-    const constColors = ["red", "green", "blue"] as const;
+    // const colors = ["red", "green", "blue"] as string[];
+    // // With const assertion (makes tuple with literal types)
+    // const constColors = ["red", "green", "blue"] as const;
 
     // Type assertion examples for display
     const [inputValue, setInputValue] = useState<string>("");

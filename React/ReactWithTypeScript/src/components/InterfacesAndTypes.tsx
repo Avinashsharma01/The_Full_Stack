@@ -20,8 +20,8 @@ interface UserSettings {
     language: string;
 }
 
-// Type alias example
-type UserID = number | string;
+// Type alias example (commented for demo)
+// type UserID = number | string;
 
 // Extending interfaces
 interface Employee extends User {
@@ -36,13 +36,13 @@ type AdminUser = User & {
     canDeleteUsers: boolean;
 };
 
-// Using interfaces to define function types
-interface MathFunction {
-    (x: number, y: number): number;
-}
+// Using interfaces to define function types (commented for demo)
+// interface MathFunction {
+//     (x: number, y: number): number;
+// }
 
-// Using type aliases for function types
-type StringProcessor = (input: string) => string;
+// Using type aliases for function types (commented for demo)
+// type StringProcessor = (input: string) => string;
 
 const InterfacesAndTypes: FC = () => {
     // Example user objects
@@ -82,11 +82,12 @@ const InterfacesAndTypes: FC = () => {
     };
 
     // Function type examples
-    const add: MathFunction = (x, y) => x + y;
-    const multiply: MathFunction = (x, y) => x * y;
+    // Function implementations (commented for demo)
+    // const add: MathFunction = (x, y) => x + y;
+    // const multiply: MathFunction = (x, y) => x * y;
 
-    const toUpperCase: StringProcessor = (input) => input.toUpperCase();
-    const toLowerCase: StringProcessor = (input) => input.toLowerCase();
+    // const toUpperCase: StringProcessor = (input) => input.toUpperCase();
+    // const toLowerCase: StringProcessor = (input) => input.toLowerCase();
 
     return (
         <div className="concept-section">

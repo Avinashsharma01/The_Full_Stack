@@ -89,7 +89,8 @@ const TypeGuards: FC = () => {
         }
 
         // This should never happen due to our type definitions
-        return `Unknown user type: ${user.name}`;
+        // Since this is unreachable, we'll use a simple fallback
+        return "Unknown user type";
     }
 
     // 4. Custom type guard with type predicate
@@ -132,10 +133,11 @@ const TypeGuards: FC = () => {
                 return `Viewer ${
                     user.name
                 } (last visit: ${user.lastVisit.toLocaleDateString()})`;
-            default:
+            default: {
                 // This should never be reached with a properly typed AppUser
                 const _exhaustiveCheck: never = user;
                 return _exhaustiveCheck;
+            }
         }
     }
 

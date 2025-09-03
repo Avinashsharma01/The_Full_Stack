@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { FC } from "react";
 import CodeBlock from "./shared/CodeBlock";
 
@@ -7,8 +6,9 @@ const BasicTypes: FC = () => {
     const stringExample: string = "Hello TypeScript";
     const numberExample: number = 42;
     const booleanExample: boolean = true;
-    const undefinedExample: undefined = undefined;
-    const nullExample: null = null;
+    // Note: These are for demonstration purposes
+    // const undefinedExample: undefined = undefined;
+    // const nullExample: null = null;
 
     // Array types
     const stringArray: string[] = ["React", "TypeScript", "Vite"];
@@ -30,7 +30,7 @@ const BasicTypes: FC = () => {
     const currentDirection: Direction = Direction.Up;
 
     // Any type - try to avoid when possible
-    const anyExample: any = "This could be anything";
+    // const anyExample: any = "This could be anything";
 
     // Union type
     const unionExample: string | number = "This can be string or number";
@@ -46,12 +46,12 @@ const BasicTypes: FC = () => {
     };
 
     // Function type with return type annotation
-    const add = (a: number, b: number): number => a + b;
+    // const add = (a: number, b: number): number => a + b;
 
     // Void return type
-    const logMessage = (message: string): void => {
-        console.log(message);
-    };
+    // const logMessage = (message: string): void => {
+    //     console.log(message);
+    // };
 
     return (
         <div className="concept-section">
