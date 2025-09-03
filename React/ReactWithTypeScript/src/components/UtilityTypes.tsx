@@ -3,97 +3,97 @@ import CodeBlock from "./shared/CodeBlock";
 
 const UtilityTypes: FC = () => {
     // Example base types for demonstration
-    interface User {
-        id: number;
-        name: string;
-        email: string;
-        role: string;
-        createdAt: Date;
-        settings: UserSettings;
-    }
+    // interface User {
+    //     id: number;
+    //     name: string;
+    //     email: string;
+    //     role: string;
+    //     createdAt: Date;
+    //     settings: UserSettings;
+    // }
 
-    interface UserSettings {
-        theme: "light" | "dark";
-        notifications: boolean;
-        language: string;
-    }
+    // interface UserSettings {
+    //     theme: "light" | "dark";
+    //     notifications: boolean;
+    //     language: string;
+    // }
 
     // 1. Partial<Type>
     // Makes all properties in Type optional
-    type PartialUser = Partial<User>;
+    // type PartialUser = Partial<User>;
 
     // Example usage: function to update user with partial data
-    const updateUser = (userId: number, updates: Partial<User>) => {
-        // In a real app, you would fetch the user and merge with updates
-        console.log(`Updating user ${userId} with:`, updates);
-    };
+    // const updateUser = (userId: number, updates: Partial<User>) => {
+    //     // In a real app, you would fetch the user and merge with updates
+    //     console.log(`Updating user ${userId} with:`, updates);
+    // };
 
     // 2. Required<Type>
     // Makes all properties in Type required
-    type StrictUser = Required<UserSettings>;
+    // type StrictUser = Required<UserSettings>;
 
     // 3. Readonly<Type>
     // Makes all properties in Type readonly
-    type ReadonlyUser = Readonly<User>;
+    // type ReadonlyUser = Readonly<User>;
 
     // 4. Record<Keys, Type>
     // Creates a type with properties of Keys type and values of Type
-    type UserRoles = Record<string, string[]>;
+    // type UserRoles = Record<string, string[]>;
 
-    const roles: UserRoles = {
-        admin: ["read", "write", "delete"],
-        editor: ["read", "write"],
-        viewer: ["read"],
-    };
+    // const roles: UserRoles = {
+    //     admin: ["read", "write", "delete"],
+    //     editor: ["read", "write"],
+    //     viewer: ["read"],
+    // };
 
     // 5. Pick<Type, Keys>
     // Creates a type by picking specific properties from Type
-    type UserProfile = Pick<User, "id" | "name" | "email">;
+    // type UserProfile = Pick<User, "id" | "name" | "email">;
 
     // 6. Omit<Type, Keys>
     // Creates a type by omitting specific properties from Type
-    type UserWithoutSettings = Omit<User, "settings">;
+    // type UserWithoutSettings = Omit<User, "settings">;
 
     // 7. Exclude<Type, ExcludedUnion>
     // Excludes types from a union
-    type BasicRole = "admin" | "editor" | "viewer" | "guest";
-    type NonAdminRole = Exclude<BasicRole, "admin">;
+    // type BasicRole = "admin" | "editor" | "viewer" | "guest";
+    // type NonAdminRole = Exclude<BasicRole, "admin">;
 
     // 8. Extract<Type, Union>
     // Extracts types from a union that are assignable to Union
-    type AdminOrEditor = Extract<BasicRole, "admin" | "editor">;
+    // type AdminOrEditor = Extract<BasicRole, "admin" | "editor">;
 
     // 9. NonNullable<Type>
     // Creates a type by excluding null and undefined
-    type UserOrNull = User | null | undefined;
-    type NonNullableUser = NonNullable<UserOrNull>;
+    // type UserOrNull = User | null | undefined;
+    // type NonNullableUser = NonNullable<UserOrNull>;
 
     // 10. Parameters<Type>
     // Extracts parameter types of a function type
-    type UserHandlerFunction = (user: User, action: string) => void;
-    type UserHandlerParams = Parameters<UserHandlerFunction>;
+    // type UserHandlerFunction = (user: User, action: string) => void;
+    // type UserHandlerParams = Parameters<UserHandlerFunction>;
 
     // 11. ReturnType<Type>
     // Extracts the return type of a function
-    function fetchUser(): Promise<User> {
-        return Promise.resolve({} as User);
-    }
+    // function fetchUser(): Promise<User> {
+    //     return Promise.resolve({} as User);
+    // }
 
-    type FetchUserReturnType = ReturnType<typeof fetchUser>; // Promise<User>
+    // type FetchUserReturnType = ReturnType<typeof fetchUser>; // Promise<User>
 
     // 12. InstanceType<Type>
     // Extracts the instance type from a constructor function
-    class UserManager {
-        getUser(id: number) {
-            return {} as User;
-        }
-    }
+    // class UserManager {
+    //     getUser(id: number) {
+    //         return {} as User;
+    //     }
+    // }
 
-    type UserManagerInstance = InstanceType<typeof UserManager>;
+    // type UserManagerInstance = InstanceType<typeof UserManager>;
 
     // 13. Awaited<Type>
     // Extracts the resolved type from a Promise
-    type FetchedUser = Awaited<ReturnType<typeof fetchUser>>; // User
+    // type FetchedUser = Awaited<ReturnType<typeof fetchUser>>; // User
 
     return (
         <div className="concept-section">
