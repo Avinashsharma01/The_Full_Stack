@@ -1,0 +1,64 @@
+# Docker Compose for Authentication TypeScript App
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7-jammy
+    container_name: auth-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+      MONGO_INITDB_DATABASE: auth_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - auth-network
+
+  # Authentication App
+  auth-app:
+    build: .
+    container_name: auth-typescript-app
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      MONGO_URL: mongodb://admin:password123@mongodb:27017/auth_db?authSource=admin
+      JWT_SECRET: your-super-secret-jwt-key-change-this-in-production
+      EMAIL_USER: your-email@gmail.com
+      EMAIL_PASS: your-app-password
+    depends_on:
+      - mongodb
+    networks:
+      - auth-network
+    volumes:
+      - ./logs:/app/logs
+
+  # Nginx Reverse Proxy (Optional)
+  nginx:
+    image: nginx:alpine
+    container_name: auth-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - auth-app
+    networks:
+      - auth-network
+
+volumes:
+  mongodb_data:
+    driver: local
+
+networks:
+  auth-network:
+    driver: bridge

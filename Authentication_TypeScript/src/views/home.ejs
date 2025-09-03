@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= appName %></title>
+        <link rel="stylesheet" href="./home.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>🔐 <%= appName %></h1>
+            <p class="subtitle">Secure Authentication System</p>
+
+            <div class="features">
+                <div class="feature">
+                    <h3>🔑 Secure Authentication</h3>
+                    <p>JWT-based authentication with bcrypt password hashing</p>
+                </div>
+
+                <div class="feature">
+                    <h3>📧 Password Recovery</h3>
+                    <p>
+                        Email-based password reset with secure token validation
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>🛡️ Protected Routes</h3>
+                    <p>
+                        Middleware-protected endpoints for authenticated users
+                    </p>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="/forgot-password" class="nav-link">
+                    📧 Forgot Password
+                </a>
+
+                <a href="/api/v1/user" class="nav-link secondary">
+                    🔌 API Documentation
+                </a>
+            </div>
+
+            <div class="api-info">
+                <h3>🚀 API Endpoints</h3>
+                <p>
+                    <strong>POST /api/v1/user/register</strong> - Register new
+                    user<br />
+                    <strong>POST /api/v1/user/login</strong> - User login<br />
+                    <strong>POST /api/v1/user/changepass</strong> - Change
+                    password<br />
+                    <strong>POST /api/v1/user/forgotPass</strong> - Request
+                    password reset<br />
+                    <strong>GET /api/v1/user/getme</strong> - Get user profile
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

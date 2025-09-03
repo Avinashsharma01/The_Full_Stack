@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start React TypeScript App",
+			"type": "shell",
+			"command": "cd c:/Desktop/THE BACKEND/FullStack/React/ReactWithTypeScript && npm run dev",
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

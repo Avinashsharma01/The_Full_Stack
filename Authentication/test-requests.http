@@ -1,0 +1,51 @@
+### Test Authentication API
+
+### 1. Register User
+POST http://localhost:3000/api/v1/user/register
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "password": "oldpassword123",
+  "password_confirmation": "oldpassword123",
+  "tc": true
+}
+
+### 2. Login User
+POST http://localhost:3000/api/v1/user/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "oldpassword123"
+}
+
+### 3. Change Password (Replace YOUR_TOKEN with actual token from login)
+POST http://localhost:3000/api/v1/user/changepass
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "currentPassword": "oldpassword123",
+  "newPassword": "newpassword456",
+  "cfNewPassword": "newpassword456"
+}
+
+### 4. Test Login with Old Password (Should Fail)
+POST http://localhost:3000/api/v1/user/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "oldpassword123"
+}
+
+### 5. Test Login with New Password (Should Work)
+POST http://localhost:3000/api/v1/user/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "newpassword456"
+}
